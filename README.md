@@ -1,5 +1,9 @@
-MY FAVORITE MOVIES
+My Favorite Movies
 ==================
+
+[**Fork this project**](https://github.com/timuruski/favorite-movies/fork) to begin.
+You have two days to complete the project, but you can choose how to spend your time. 
+
 
 Task
 -----
