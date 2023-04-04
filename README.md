@@ -1,8 +1,16 @@
 My Favorite Movies
 ==================
 
-[**Fork this project**](https://github.com/timuruski/favorite-movies/fork) to begin.
-You have two days to complete the project, but you can choose how to spend your time. 
+[**Fork this project**](https://github.com/timuruski/favorite-movies/fork) to begin. You can
+push your commits up as you work, or at the end if you prefer.
+
+You have two days to complete the project, but there is no expectation that you are working on it
+the entire time. You can choose how to spend your time and focus on the parts you're
+most confident about.
+
+You can also create a brand new Rails app if you prefer a different setup from what's provided
+by this repo. If you end up creating a new repository, please make sure it's available online
+somewhere and communicate the URL to us for review.
 
 
 Task
@@ -28,14 +36,15 @@ is using [dotenv](https://github.com/bkeepers/dotenv), so you can put it in `.en
 TMDB_API_KEY="..."
 ```
 
-You can get an API key by signing up for a free account https://www.themoviedb.org/signup
+If you aren't provided an API key with this kit, You can get one by signing up for a free
+account https://www.themoviedb.org/signup
 
 This repo includes a minimal TMDB API client in `lib/tmdb/api_client.rb`;you can use and
 extend it as needed. Documentation for the TMDB API is available at these links.
 - https://www.themoviedb.org/documentation/api
 - https://developers.themoviedb.org/3/getting-started/introduction
 
-You can run the app locally or via Docker if you need to.
+You can run the app locally or via Docker if you prefer.
 
 To start locally:
 1. `bundle install`
