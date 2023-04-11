@@ -1,14 +1,11 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Movie lists</h1>
-
-<div id="movie_lists">
-  <% @movie_lists.each do |movie_list| %>
-    <%= render movie_list %>
+<div>
+  <% if @movie_lists.first.present? %>
+    <h1><%= @movie_lists.first.title %></h1>
+  <% else %>
     <p>
-      <%= link_to "Show this movie list", movie_list %>
+        <%= link_to "New movie list", new_movie_list_path %>
     </p>
   <% end %>
 </div>
-
-<%= link_to "New movie list", new_movie_list_path %>
