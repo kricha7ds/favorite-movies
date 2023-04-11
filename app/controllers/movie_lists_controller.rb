@@ -25,7 +25,7 @@ class MovieListsController < ApplicationController
 
     respond_to do |format|
       if @movie_list.save
-        format.html { redirect_to movie_list_url(@movie_list), notice: "Movie list was successfully created." }
+        format.html { redirect_to root_path, notice: "Movie list was successfully created." }
         format.json { render :show, status: :created, location: @movie_list }
       else
         format.html { render :new, status: :unprocessable_entity }
