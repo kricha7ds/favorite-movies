@@ -1,0 +1,15 @@
+<%= turbo_frame_tag "search_results" do %>
+  <% movies.each do |movie| %>
+    <li class="mt-2">
+      <div class="d-flex justify-content-between">
+        <div class="d-flex">
+          <% poster_src = movie["poster_path"].present? ? [TMDB.config.dig("images", "base_url"), "/w185", movie["poster_path"] ].join : 'empty-poster.png' %>
+          <img class="img-thumbnail rounded-circle" style="width: 3rem" alt="" src="<%= poster_src %>"/>
+          <div class="d-flex flex-column mx-3 justify-content-center">
+            <small class="fw-bold" style="overflow: hidden; text-overflow: ellipsis; white-space: no-wrap; max-width: 30rem "><%= link_to @movie_list, data: { "turbo-method": :patch }, class: "text-decoration-none " do %><%= movie["title"] %><% end %></small>
+          </div>
+        </div>
+      </div>
+    </li>
+  <% end %>
+<% end %>

@@ -1,0 +1,42 @@
+<%= form_with(model: fave_movie) do |form| %>
+  <% if fave_movie.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(fave_movie.errors.count, "error") %> prohibited this fave_movie from being saved:</h2>
+
+      <ul>
+        <% fave_movie.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :tmdb_id, style: "display: block" %>
+    <%= form.number_field :tmdb_id %>
+  </div>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :release_date, style: "display: block" %>
+    <%= form.text_field :release_date %>
+  </div>
+
+  <div>
+    <%= form.label :poster_path, style: "display: block" %>
+    <%= form.text_field :poster_path %>
+  </div>
+
+  <div>
+    <%= form.label :movie_list_id, style: "display: block" %>
+    <%= form.text_field :movie_list_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
