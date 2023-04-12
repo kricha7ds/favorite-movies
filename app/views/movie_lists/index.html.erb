@@ -1,0 +1,43 @@
+<div class="container flex flex-col space-y-8 justify-center items-center text-center overflow-hidden">
+  <% if notice %>
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    <%= notice %>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  <% end %>
+
+  <% if @movie_list.present? %>
+    <% if @movies.present? %>
+      <div class="wrapper" style="padding-top: 3rem; padding-bottom: 5rem;">
+        <h1>Movies That Made Your Top <%= @movie_list.max_movies.to_s %> </h1>
+      </div>
+
+      <div class="wrapper" style="display: flex; width: 100%; padding-top: 3rem; padding: 3rem; border: 1px solid; overflow-y: hidden; justify-content: space-between;">
+        <div class="card flex-row" style="width: 18rem; max-height: 18rem;">
+          <% @movies.each do |movie| %>
+            <img class="card-img-top" style="height:100%" alt="" src="<%= [TMDB.config.dig("images", "base_url"), "/w185", movie.poster_path ].join %>" />
+            <div class="card-body" style="padding-right: 3rem">
+              <h5 class="card-title"><%= movie.title %></h5>
+              <p class="card-text">Released: <%= movie.release_date %></p>
+              <button type="button" class="btn btn-sm btn-outline-danger">
+                <%= link_to "Remove", movie, method: :delete, class: "text-decoration-none" %>
+              </button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% else %>
+      <div>
+        <h2>Search for movies to add to your list.</h2>
+      </div>
+    <% end %>
+
+  <% else %>
+    <div>
+      <button type="button" class="btn btn-outline-primary btn-lg mt-5">
+        <%= link_to "New movie list", new_movie_list_path, class: "text-decoration-none" %>
+        <%# <%= link_to "Delete", @movie_list, method: :delete, class: "nav-link text-danger a:hover { color: #fff !important; }" %>
+      </button>
+    </div>
+  <% end %>
+</div>

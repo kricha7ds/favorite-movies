@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @fave_movie %>
+
+<div>
+  <%= link_to "Edit this fave movie", edit_fave_movie_path(@fave_movie) %> |
+  <%= link_to "Back to fave movies", fave_movies_path %>
+
+  <%= button_to "Destroy this fave movie", @fave_movie, method: :delete %>
+</div>

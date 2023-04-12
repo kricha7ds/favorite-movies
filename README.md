@@ -1,6 +1,21 @@
 My Favorite Movies
 ==================
 
+Preview
+---
+
+Here is a preview of the work I added to this forked project. I was hoping to implement a sleeker UI by using a turbo frame to render search results in the dropdown partial, rather than displaying search results on a separate page. I would say the remaining pieces that I would have _liked_ to build out are:
+1. Render search results in dropdown using turbo frame
+2. Implement FaveMovie controller such that selecting a movie from the search results would create a new `FaveMovie` record, to be added to the `MovieList`.
+
+_Note:_ the `FaveMovie`'s displayed in the preview below were added via the rails console during development. This feature is not fully functional, as mentioned in (2) above.
+
+Fun little project, here's a preview of my progress:
+
+![preview](https://user-images.githubusercontent.com/37306581/231597907-3c4ad140-7636-482e-89ef-b88d98fb66e7.png)
+
+----
+
 [**Fork this project**](https://github.com/timuruski/favorite-movies/fork) to begin. You can
 push your commits up as you work, or at the end if you prefer.
 
