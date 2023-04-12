@@ -38,6 +38,14 @@ module TMDB
       http_request(request)
     end
 
+    def search_movies(query)
+      req_params = {
+        query: query
+      }
+
+      get("/search/movie", req_params)
+    end
+
     def post(url, body = nil)
       url = build_url(path)
       request = Net::HTTP::Post.new(url)
