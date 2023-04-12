@@ -1,7 +1,18 @@
 <div>
   <div>
-    <h2><%= @movie["title"] %></h2>
-    <img src="<%= [TMDB.config.dig("images", "base_url"), "/w185", @movie["poster_path"] ].join %>" />
+  <% if @movies.present? %>
+
+    <h2><%= @title %></h2>
+    <img src="<%= [TMDB.config.dig("images", "base_url"), "/w185", @movie&["poster_path"] ].join %>" />
+    <h3>Movie Details</h3>
+    <div>
+      <p><%= @tagline %></p>
+      <p><%= @runtime %> <span> minutes</span> </p>
+      <p><%= @genres %></p>
+    </div>
     <pre><%= JSON.pretty_generate(@movie) %></div>
+  <% else %>
+    <h3>Nothing to show here ...</h3>
+  <% end %>
   </div>
 </div>

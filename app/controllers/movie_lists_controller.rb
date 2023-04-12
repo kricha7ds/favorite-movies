@@ -1,5 +1,6 @@
 class MovieListsController < ApplicationController
   before_action :set_movie_list, only: %i[ show edit update destroy ]
+  skip_before_action :verify_authenticity_token
 
   # GET /movie_lists or /movie_lists.json
   def index

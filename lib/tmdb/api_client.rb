@@ -43,7 +43,8 @@ module TMDB
         query: query
       }
 
-      get("/search/movie", req_params)
+      response = get("/search/movie", req_params)
+      results = response.dig(:body, :results)
     end
 
     def post(url, body = nil)
