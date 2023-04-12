@@ -3,7 +3,9 @@ class MovieListsController < ApplicationController
 
   # GET /movie_lists or /movie_lists.json
   def index
-    @movie_lists = MovieList.all
+    @movie_list = MovieList.first
+
+    @movies = FaveMovie.where(movie_list_id: @movie_list&.id)
   end
 
   # GET /movie_lists/1 or /movie_lists/1.json
@@ -52,7 +54,7 @@ class MovieListsController < ApplicationController
     @movie_list.destroy
 
     respond_to do |format|
-      format.html { redirect_to movie_lists_url, notice: "Movie list was successfully destroyed." }
+      format.html { redirect_to root_path, notice: "Movie list was successfully destroyed." }
       format.json { head :no_content }
     end
   end

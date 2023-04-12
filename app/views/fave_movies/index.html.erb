@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Fave movies</h1>
+
+<div id="fave_movies">
+  <% @fave_movies.each do |fave_movie| %>
+    <%= render fave_movie %>
+    <p>
+      <%= link_to "Show this fave movie", fave_movie %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New fave movie", new_fave_movie_path %>
